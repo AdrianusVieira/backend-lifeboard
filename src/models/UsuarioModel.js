@@ -8,10 +8,8 @@ module.exports = {
     await connection("usuario").insert(usuario);
     return usuario;
   },
-  async getByEmail({ email }) {
-    const result = await connection("usuario")
-      .where({ email })
-      .select("usuario_id");
+  async getByEmail(email) {
+    const result = await connection("usuario").where({ email }).select("*");
 
     return result;
   },

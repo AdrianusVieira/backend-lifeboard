@@ -8,8 +8,8 @@ exports.up = function (knex) {
     table.string("nome").notNullable();
     table.string("email").notNullable();
     table.date("data_nascimento").notNullable();
-    table.string("foto", 10000).notNullable();
-    table.float("patrimonio_total").notNullable();
+    table.string("foto", 10000);
+    table.float("patrimonio_total");
   });
 };
 

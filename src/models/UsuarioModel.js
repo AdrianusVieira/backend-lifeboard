@@ -1,9 +1,12 @@
 const connection = require("../database/connection");
+const { v4: uuidv4 } = require("uuid");
 
-modeule.exports = {
+module.exports = {
   async create(usuario) {
-    const result = await connection("usuario").insert(usuario);
-    return result;
+    const id_usuario = uuidv4();
+    usuario.id_usuario = id_usuario;
+    await connection("usuario").insert(usuario);
+    return usuario;
   },
   async getByEmail({ email }) {
     const result = await connection("usuario")

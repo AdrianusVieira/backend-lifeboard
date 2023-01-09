@@ -10,6 +10,8 @@ exports.up = function (knex) {
     table.date("data_nascimento").notNullable();
     table.string("foto", 10000);
     table.float("patrimonio_total");
+    table.float("exp_atual");
+    table.integer("level");
   });
 };
 

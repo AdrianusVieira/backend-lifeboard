@@ -15,4 +15,8 @@ module.exports = {
 
     return result;
   },
+  async updateByEmail(email, usuario) {
+    const result = await connection("usuario").where({ email }).update(usuario);
+    return result;
+  },
 };

@@ -19,4 +19,8 @@ module.exports = {
     const result = await connection("usuario").where({ email }).update(usuario);
     return result;
   },
+  async deleteByEmail(email) {
+    const result = await connection("usuario").where({ email }).delete();
+    return result;
+  },
 };

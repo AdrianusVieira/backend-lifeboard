@@ -1,5 +1,9 @@
 const { request } = require("express");
-const { getByEmail, updateByEmail } = require("../models/UsuarioModel");
+const {
+  getByEmail,
+  updateByEmail,
+  deleteByEmail,
+} = require("../models/UsuarioModel");
 const UsuarioModel = require("../models/UsuarioModel");
 
 module.exports = {
@@ -40,6 +44,20 @@ module.exports = {
 
       return response.status(500).json({
         notification: "Falha Interna ao tentar atualizar o usuario!",
+      });
+    }
+  },
+  async deleteByEmail(request, response) {
+    try {
+      const { email } = request.params;
+      const result = await UsuarioModel.deleteByEmail(email);
+
+      return response.status(200).json(result);
+    } catch (error) {
+      console.log("User delete failed" + error);
+
+      return response.status(500).json({
+        notification: "Erro interno ao deletar o usuario!",
       });
     }
   },

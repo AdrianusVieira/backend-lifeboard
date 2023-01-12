@@ -12,8 +12,10 @@ routes.delete("/usuario/:email", UsuarioController.deleteByEmail);
 
 //carteira
 routes.post("/carteira", CarteiraController.create);
+routes.get("/carteira/:id", CarteiraController.getByUsuario);
 
 //fundo
 routes.post("/fundo", FundoController.create);
+routes.get("/fundo/:id", FundoController.getByUsuario);
 
 module.exports = routes;

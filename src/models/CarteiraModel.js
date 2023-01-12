@@ -8,4 +8,11 @@ module.exports = {
     await connection("carteiras").insert(carteira);
     return carteira;
   },
+  async getByUsuario(id_usuario) {
+    const result = await connection("carteiras")
+      .where({ id_usuario })
+      .select("*");
+
+    return result;
+  },
 };

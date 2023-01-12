@@ -8,4 +8,11 @@ module.exports = {
     await connection("fundos").insert(fundo);
     return fundo;
   },
+  async getByUsuario(id_usuario) {
+    const result = await connection("fundos")
+      .where({ id_usuario })
+      .select("*");
+
+    return result;
+  },
 };

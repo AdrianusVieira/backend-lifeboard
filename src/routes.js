@@ -1,5 +1,6 @@
 const express = require("express");
 const CarteiraController = require("./controllers/CarteiraController");
+const FundoController = require("./controllers/FundoController");
 const UsuarioController = require("./controllers/UsuarioController");
 const routes = express.Router();
 
@@ -11,5 +12,8 @@ routes.delete("/usuario/:email", UsuarioController.deleteByEmail);
 
 //carteira
 routes.post("/carteira", CarteiraController.create);
+
+//fundo
+routes.post("/fundo", FundoController.create);
 
 module.exports = routes;

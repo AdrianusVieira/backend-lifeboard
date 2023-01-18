@@ -9,7 +9,7 @@ exports.up = function (knex) {
     table
       .foreign("id_usuario")
       .references("id_usuario")
-      .inTable("usuario")
+      .inTable("usuarios")
       .onDelete("cascade");
     table.string("nome").notNullable();
     table.float("patrimonio").notNullable();

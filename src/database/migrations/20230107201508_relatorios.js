@@ -5,19 +5,19 @@ exports.up = function (knex) {
     table
       .foreign("id_carteira")
       .references("id_carteira")
-      .inTable("carteira")
+      .inTable("carteiras")
       .onDelete("cascade");
     table.string("id_fundo");
     table
       .foreign("id_fundo")
       .references("id_fundo")
-      .inTable("fundo")
+      .inTable("fundos")
       .onDelete("cascade");
     table.string("id_investimento");
     table
       .foreign("id_investimento")
       .references("id_investimento")
-      .inTable("investimento")
+      .inTable("investimentos")
       .onDelete("cascade");
     table.string("data_hora").notNullable();
     table.float("valor").notNullable();

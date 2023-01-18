@@ -7,20 +7,20 @@ module.exports = {
     usuario.level = 1;
     usuario.exp_atual = 0;
     usuario.id_usuario = id_usuario;
-    await connection("usuario").insert(usuario);
+    await connection("usuarios").insert(usuario);
     return usuario;
   },
   async getByEmail(email) {
-    const result = await connection("usuario").where({ email }).select("*");
+    const result = await connection("usuarios").where({ email }).select("*");
 
     return result;
   },
   async updateByEmail(email, usuario) {
-    const result = await connection("usuario").where({ email }).update(usuario);
+    const result = await connection("usuarios").where({ email }).update(usuario);
     return result;
   },
   async deleteByEmail(email) {
-    const result = await connection("usuario").where({ email }).delete();
+    const result = await connection("usuarios").where({ email }).delete();
     return result;
   },
 };

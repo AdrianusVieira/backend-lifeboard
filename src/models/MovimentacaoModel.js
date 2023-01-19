@@ -8,4 +8,25 @@ module.exports = {
     await connection("movimentacoes").insert(movimentacao);
     return movimentacao;
   },
+  async getByCarteira(id_carteira) {
+    const result = await connection("movimentacoes")
+      .where({ id_carteira })
+      .select("*");
+
+    return result;
+  },
+  async getByFundo(id_fundo) {
+    const result = await connection("movimentacoes")
+      .where({ id_fundo })
+      .select("*");
+
+    return result;
+  },
+  async getByInvestimento(id_investimento) {
+    const result = await connection("movimentacoes")
+      .where({ id_investimento })
+      .select("*");
+
+    return result;
+  },
 };

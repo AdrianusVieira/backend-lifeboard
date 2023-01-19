@@ -25,5 +25,14 @@ routes.delete("/fundo/:id", FundoController.deleteById);
 
 //movimentacao
 routes.post("/movimentacao", MovimentacaoController.create);
+routes.get(
+  "/movimentacaocarteira/:id_carteira",
+  MovimentacaoController.getByCarteira
+);
+routes.get("/movimentacaofundo/:id_fundo", MovimentacaoController.getByFundo);
+routes.get(
+  "/movimentacaoinvestimento/:id_investimento",
+  MovimentacaoController.getByInvestimento
+);
 
 module.exports = routes;

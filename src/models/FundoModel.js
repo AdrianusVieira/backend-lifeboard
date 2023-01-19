@@ -14,9 +14,11 @@ module.exports = {
     return result;
   },
   async updateById(id_fundo, fundo) {
-    const result = await connection("fundos")
-      .where({ id_fundo })
-      .update(fundo);
+    const result = await connection("fundos").where({ id_fundo }).update(fundo);
+    return result;
+  },
+  async deleteById(id_fundo) {
+    const result = await connection("fundos").where({ id_fundo }).delete();
     return result;
   },
 };

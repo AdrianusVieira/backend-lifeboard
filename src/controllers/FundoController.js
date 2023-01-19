@@ -42,4 +42,18 @@ module.exports = {
       });
     }
   },
+  async deleteById(request, response) {
+    try {
+      const { id } = request.params;
+      const result = await FundoModel.deleteById(id);
+
+      return response.status(200).json(result);
+    } catch (error) {
+      console.log("User delete failed" + error);
+
+      return response.status(500).json({
+        notification: "Erro interno ao deletar o fundo!",
+      });
+    }
+  },
 };

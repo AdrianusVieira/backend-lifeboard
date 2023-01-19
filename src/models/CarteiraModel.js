@@ -21,4 +21,8 @@ module.exports = {
       .update(carteira);
     return result;
   },
+  async deleteById(id_carteira) {
+    const result = await connection("carteiras").where({ id_carteira }).delete();
+    return result;
+  },
 };

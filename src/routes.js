@@ -15,11 +15,13 @@ routes.delete("/usuario/:email", UsuarioController.deleteByEmail);
 routes.post("/carteira", CarteiraController.create);
 routes.get("/carteira/:id", CarteiraController.getByUsuario);
 routes.put("/carteira/:id", CarteiraController.updateById);
+routes.delete("/carteira/:id", CarteiraController.deleteById);
 
 //fundo
 routes.post("/fundo", FundoController.create);
 routes.get("/fundo/:id", FundoController.getByUsuario);
 routes.put("/fundo/:id", FundoController.updateById);
+routes.delete("/fundo/:id", FundoController.deleteById);
 
 //movimentacao
 routes.post("/movimentacao", MovimentacaoController.create);

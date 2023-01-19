@@ -14,10 +14,12 @@ routes.delete("/usuario/:email", UsuarioController.deleteByEmail);
 //carteira
 routes.post("/carteira", CarteiraController.create);
 routes.get("/carteira/:id", CarteiraController.getByUsuario);
+routes.put("/carteira/:id", CarteiraController.updateById);
 
 //fundo
 routes.post("/fundo", FundoController.create);
 routes.get("/fundo/:id", FundoController.getByUsuario);
+routes.put("/fundo/:id", FundoController.updateById);
 
 //movimentacao
 routes.post("/movimentacao", MovimentacaoController.create);

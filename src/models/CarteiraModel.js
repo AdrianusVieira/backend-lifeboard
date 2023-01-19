@@ -15,4 +15,10 @@ module.exports = {
 
     return result;
   },
+  async updateById(id_carteira, carteira) {
+    const result = await connection("carteiras")
+      .where({ id_carteira })
+      .update(carteira);
+    return result;
+  },
 };

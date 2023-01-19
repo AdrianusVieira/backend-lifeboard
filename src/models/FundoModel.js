@@ -9,10 +9,14 @@ module.exports = {
     return fundo;
   },
   async getByUsuario(id_usuario) {
-    const result = await connection("fundos")
-      .where({ id_usuario })
-      .select("*");
+    const result = await connection("fundos").where({ id_usuario }).select("*");
 
+    return result;
+  },
+  async updateById(id_fundo, fundo) {
+    const result = await connection("fundos")
+      .where({ id_fundo })
+      .update(fundo);
     return result;
   },
 };

@@ -20,6 +20,7 @@ exports.up = function (knex) {
       .inTable("investimentos")
       .onDelete("cascade");
     table.string("data_hora").notNullable();
+    table.string("descricao").notNullable();
     table.float("valor").notNullable();
     table.string("tipo");
   });

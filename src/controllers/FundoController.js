@@ -27,4 +27,19 @@ module.exports = {
       });
     }
   },
+  async updateById(request, response) {
+    try {
+      const { id } = request.params;
+      const fundo = request.body;
+      const result = await FundoModel.updateById(id, fundo);
+
+      return response.status(200).json(result);
+    } catch (error) {
+      console.wanr("fundo update failed" + error);
+
+      return response.status(500).json({
+        notification: "Falha Interna ao tentar atualizar o fundo!",
+      });
+    }
+  },
 };

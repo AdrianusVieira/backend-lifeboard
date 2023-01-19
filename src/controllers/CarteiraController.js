@@ -26,4 +26,19 @@ module.exports = {
       });
     }
   },
+  async updateById(request, response) {
+    try {
+      const { id } = request.params;
+      const carteira = request.body;
+      const result = await CarteiraModel.updateById(id, carteira);
+
+      return response.status(200).json(result);
+    } catch (error) {
+      console.wanr("Carteira update failed" + error);
+
+      return response.status(500).json({
+        notification: "Falha Interna ao tentar atualizar a carteira!",
+      });
+    }
+  },
 };

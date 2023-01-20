@@ -3,6 +3,7 @@ const CarteiraController = require("./controllers/CarteiraController");
 const FundoController = require("./controllers/FundoController");
 const MovimentacaoController = require("./controllers/MovimentacaoController");
 const UsuarioController = require("./controllers/UsuarioController");
+const InvestimentoController = require("./controllers/InvestimentoController");
 const routes = express.Router();
 
 //usuario
@@ -34,5 +35,11 @@ routes.get(
   "/movimentacaoinvestimento/:id_investimento",
   MovimentacaoController.getByInvestimento
 );
+
+//investimento
+routes.post("/investimento", InvestimentoController.create);
+routes.get("/investimento/:categoria", InvestimentoController.getByCategoria);
+routes.put("/investimento/:id", InvestimentoController.updateById);
+routes.delete("/investimento/:id", InvestimentoController.deleteById);
 
 module.exports = routes;

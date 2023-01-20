@@ -38,7 +38,8 @@ routes.get(
 
 //investimento
 routes.post("/investimento", InvestimentoController.create);
-routes.get("/investimento/:categoria", InvestimentoController.getByCategoria);
+routes.get("/investimentocategoria/:categoria", InvestimentoController.getByCategoria);
+routes.get("/investimentousuario/:id", InvestimentoController.getByUsuario);
 routes.put("/investimento/:id", InvestimentoController.updateById);
 routes.delete("/investimento/:id", InvestimentoController.deleteById);
 

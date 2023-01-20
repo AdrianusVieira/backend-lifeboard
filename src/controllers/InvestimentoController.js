@@ -27,6 +27,18 @@ module.exports = {
       });
     }
   },
+  async getByUsuario(request, response) {
+    try {
+      const { id } = request.params;
+      const result = await InvestimentoModel.getByUsuario(id);
+      return response.status(200).json(result);
+    } catch (error) {
+      console.warn(error);
+      return response.status(500).json({
+        notification: "Erro Interno ao tentar encontrar os Investimentos!",
+      });
+    }
+  },
   async updateById(request, response) {
     try {
       const { id } = request.params;

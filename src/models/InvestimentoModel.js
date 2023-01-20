@@ -15,6 +15,13 @@ module.exports = {
 
     return result;
   },
+  async getByUsuario(id_usuario) {
+    const result = await connection("investimentos")
+      .where({ id_usuario })
+      .select("*");
+
+    return result;
+  },
   async updateById(id_investimento, investimento) {
     const result = await connection("investimentos")
       .where({ id_investimento })

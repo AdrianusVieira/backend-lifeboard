@@ -4,6 +4,7 @@ const FundoController = require("./controllers/FundoController");
 const MovimentacaoController = require("./controllers/MovimentacaoController");
 const UsuarioController = require("./controllers/UsuarioController");
 const InvestimentoController = require("./controllers/InvestimentoController");
+const TarefaController = require("./controllers/TarefaController");
 const routes = express.Router();
 
 //usuario
@@ -42,5 +43,11 @@ routes.get("/investimentocategoria/:categoria", InvestimentoController.getByCate
 routes.get("/investimentousuario/:id", InvestimentoController.getByUsuario);
 routes.put("/investimento/:id", InvestimentoController.updateById);
 routes.delete("/investimento/:id", InvestimentoController.deleteById);
+
+//tarefa
+routes.post("/tarefa", TarefaController.create);
+routes.get("/tarefa/:id", TarefaController.getByUsuario);
+routes.put("/tarefa/:id", TarefaController.updateById);
+routes.delete("/tarefa/:id", TarefaController.deleteById);
 
 module.exports = routes;

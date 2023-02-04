@@ -35,7 +35,7 @@ module.exports = {
 
       return response.status(200).json(result);
     } catch (error) {
-      console.wanr("fundo update failed" + error);
+      console.warn("fundo update failed" + error);
 
       return response.status(500).json({
         notification: "Falha Interna ao tentar atualizar o fundo!",

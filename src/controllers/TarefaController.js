@@ -34,7 +34,7 @@ module.exports = {
 
       return response.status(200).json(result);
     } catch (error) {
-      console.wanr("Tarefa update failed" + error);
+      console.warn("Tarefa update failed" + error);
 
       return response.status(500).json({
         notification: "Falha Interna ao tentar atualizar a tarefa!",

@@ -14,7 +14,8 @@ exports.up = function (knex) {
     table.string("descricao").notNullable();
     table.date("data").notNullable();
     table.integer("urgencia").notNullable();
-    table.json("recorrencia").notNullable();
+    table.integer("ultimo_feito").nullable();
+    table.json("recorrencia").nullable();
   });
 };
 

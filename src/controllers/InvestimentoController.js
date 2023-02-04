@@ -47,7 +47,7 @@ module.exports = {
 
       return response.status(200).json(result);
     } catch (error) {
-      console.wanr("Investimento update failed" + error);
+      console.warn("Investimento update failed" + error);
 
       return response.status(500).json({
         notification: "Falha Interna ao tentar atualizar a investimento!",

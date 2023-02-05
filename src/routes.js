@@ -5,6 +5,7 @@ const MovimentacaoController = require("./controllers/MovimentacaoController");
 const UsuarioController = require("./controllers/UsuarioController");
 const InvestimentoController = require("./controllers/InvestimentoController");
 const TarefaController = require("./controllers/TarefaController");
+const RelatorioController = require("./controllers/RelatorioController");
 const routes = express.Router();
 
 //usuario
@@ -49,5 +50,9 @@ routes.post("/tarefa", TarefaController.create);
 routes.get("/tarefa/:id", TarefaController.getByUsuario);
 routes.put("/tarefa/:id", TarefaController.updateById);
 routes.delete("/tarefa/:id", TarefaController.deleteById);
+
+//relatorio
+routes.post("/relatorio", RelatorioController.create);
+routes.get("/relatorio/:tipo",RelatorioController.index)
 
 module.exports = routes;

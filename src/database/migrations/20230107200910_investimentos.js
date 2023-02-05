@@ -10,6 +10,7 @@ exports.up = function (knex) {
     table.string("nome").notNullable();
     table.string("categoria").notNullable();
     table.float("patrimonio").notNullable();
+    table.float("valor_referencia").notNullable();
   });
 };
 
